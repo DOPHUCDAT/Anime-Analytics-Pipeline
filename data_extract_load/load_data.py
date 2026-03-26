@@ -65,7 +65,7 @@ def fetch_all_anime():
                     }
                 time.sleep(0.5)
 
-            print(f"✔ DONE {season} {year} → {total_records} records")
+            print(f" DONE {season} {year}: {total_records} records")
 
 
 @dlt.source()
