@@ -1,0 +1,114 @@
+[32m2026-04-04 17:03:47 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - LOGS_CAPTURED - Started capturing logs in process (pid: 95373).
+[32m2026-04-04 17:03:47 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_START - Started execution of step "dbt_models".
+[32m2026-04-04 17:03:47 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - dbt_models - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2026-04-04 17:03:53 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - dbt_models - Copying `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/partial_parse.msgpack` to `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-bc1d16f-cb07f8c/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2026-04-04 17:03:53 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - dbt_models - Running dbt command: `dbt build --select fqn:*`.
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "silver__cleaned_data" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value silver cleaned_data.
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_airing" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value gold dim_airing.
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_studios" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value gold dim_studios.
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:03:59 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value gold dim_info.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_airing_not_null_dim_airing_aired_from" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_airing_aired_from' on 'gold/dim_airing' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_airing_dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from' on 'gold/dim_airing' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_airing_not_null_dim_airing_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_airing_anime_id' on 'gold/dim_airing' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_airing_unique_dim_airing_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'unique_dim_airing_anime_id' on 'gold/dim_airing' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value gold fact_anime.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_studios_not_null_dim_studios_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_studios_anime_id' on 'gold/dim_studios' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_studios_unique_dim_studios_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'unique_dim_studios_anime_id' on 'gold/dim_studios' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_anime_id' on 'gold/dim_info' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_genres" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_genres' on 'gold/dim_info' did not pass.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_rating" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_rating' on 'gold/dim_info' did not pass.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_status" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_status' on 'gold/dim_info' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_title" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_title' on 'gold/dim_info' passed.
+[32m2026-04-04 17:04:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_not_null_dim_info_type" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_info_type' on 'gold/dim_info' did not pass.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_info_unique_dim_info_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'unique_dim_info_anime_id' on 'gold/dim_info' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_episodes__2000__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_episodes__2000__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_favorites__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_favorites__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_members__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_members__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_popularity__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_popularity__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_ranking__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_ranking__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_score__10__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_score__10__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_dbt_utils_accepted_range_fact_anime_scored_by__0" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_fact_anime_scored_by__0' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_not_null_fact_anime_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_fact_anime_anime_id' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__fact_anime_unique_fact_anime_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'unique_fact_anime_anime_id' on 'gold/fact_anime' passed.
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "mart__studio_performance" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:04:01 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value mart studio_performance.
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_season" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_MATERIALIZATION - Materialized value gold dim_season.
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_season_dbt_utils_accepted_range_dim_season_year__2100__1900" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'dbt_utils_accepted_range_dim_season_year__2100__1900' on 'gold/dim_season' passed.
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_season_accepted_values_dim_season_season__winter__spring__summer__fall" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'accepted_values_dim_season_season__winter__spring__summer__fall' on 'gold/dim_season' passed.
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_season_not_null_dim_season_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'not_null_dim_season_anime_id' on 'gold/dim_season' passed.
+[32m2026-04-04 17:04:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_OUTPUT - Yielded output "gold__dim_season_unique_dim_season_anime_id" of type "Any". (Type check passed).
+[32m2026-04-04 17:04:08 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - ASSET_CHECK_EVALUATION - Asset check 'unique_dim_season_anime_id' on 'gold/dim_season' did not pass.
+[32m2026-04-04 17:04:08 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - dbt_models - Finished dbt command: `dbt build --select fqn:*`.
+[32m2026-04-04 17:04:08 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 95373 - dbt_models - STEP_FAILURE - Execution of step "dbt_models" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`dbt build --select fqn:*`
+
+failed with exit code `1`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-bc1d16f-cb07f8c/dbt.log.
+
+Errors parsed from dbt logs:
+
+33 of 35 FAIL 15748 unique_dim_season_anime_id ................................. [[31mFAIL 15748[0m in 0.13s]
+
+[31mFailure in test unique_dim_season_anime_id (anime_seasonal/models/gold/schema.yml)[0m
+
+  Got 15748 results, configured to fail if != 0
+
+Stack Trace:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_plan.py", line 247, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 504, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 188, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 157, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/orchestration/definitions.py", line 72, in dbt_models
+    yield from dbt.cli(["build"], context=context).stream()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 215, in __next__
+    return next(self._inner_iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 288, in _stream_asset_events
+    for event in self.stream_raw_events():
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 381, in stream_raw_events
+    self._raise_on_error()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 474, in _raise_on_error
+    raise error
+[0m

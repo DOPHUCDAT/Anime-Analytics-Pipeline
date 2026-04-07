@@ -12,7 +12,7 @@ The pipeline follows the **Medallion Architecture (Bronze → Silver → Gold �
 - Transform and model data using dbt (Star schema)
 - Orchestrate and monitor the pipeline with Dagster
 - Prepare analytics-ready datasets for BI tools
-
+- Develop Machine Learning models to predict score 
 ---
 
 ## 🧱 Architecture Overview
@@ -36,7 +36,7 @@ The pipeline follows the **Medallion Architecture (Bronze → Silver → Gold �
 | Transformation | dbt |
 | Orchestration | Dagster |
 | Data Modeling | Star Schema |
-
+| Machine Learning | Scitkit-Learn |
 
 ---
 
@@ -64,20 +64,27 @@ To run the project first run docker container
 docker compose up -d
 ```
 
-Next build dbt models
-
-```bash
-cd data_transformation
-dbt build
-```
-
-Finally run Dagster Webserver and access port 3000
+Run Dagster Webserver and access port 3000 
 
 ```bash
 cd orchestration
 dagster dev -f definitions.py
 ```
 
+After get into Dagster Web UI run Materialize All to activate pipeline
+
 Visualization with Metabase on port [3005](http://localhost:3005)
 
 ---
+
+## Conclusion
+
+This project delivers an end-to-end data pipeline and machine learning solution to predict anime scores using metadata and user engagement signals. Multiple regression models were evaluated, including Linear Regression, Decision Tree, Random Forest, and Gradient Boosting. The final result found that Random Forest have highest score include:
+
+RMSE: 0.4951
+MAE: 0.3652
+R²: 0.6686
+
+From a modeling standpoint, an R² of 0.6686 suggests that the model can explain approximately 66.9% of the variance in anime scores. The RMSE and MAE values indicate that the average prediction error remains approximately 0.45 score points, which is acceptable for user-facing applications such as ranking, recommendation, or trend analysis.
+
+From a business perspective, the results confirm that both engagement metrics (members, favorites, popularity) and content attributes (genres, type, rating, seasonality) play a significant role in determining perceived quality.

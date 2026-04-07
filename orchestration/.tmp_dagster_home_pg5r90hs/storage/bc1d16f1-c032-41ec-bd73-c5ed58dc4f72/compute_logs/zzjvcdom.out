@@ -1,0 +1,38 @@
+
+=== INCREMENTAL RUN ===
+
+=== Fetching WINTER 2026 ===
+[winter 2026] Total pages: 9
+[winter 2026] Page 1/9 → 25 records
+[winter 2026] Page 2/9 → 25 records
+[winter 2026] Page 3/9 → 25 records
+[winter 2026] Page 4/9 → 25 records
+[winter 2026] Page 5/9 → 25 records
+[winter 2026] Page 6/9 → 25 records
+[winter 2026] Page 7/9 → 25 records
+[winter 2026] Page 8/9 → 25 records
+[winter 2026] Page 9/9 → 24 records
+ DONE winter 2026 -> 224 records
+
+=== Fetching SPRING 2026 ===
+[spring 2026] Total pages: 5
+[spring 2026] Page 1/5 → 25 records
+[spring 2026] Page 2/5 → 25 records
+[spring 2026] Page 3/5 → 25 records
+[spring 2026] Page 4/5 → 25 records
+[spring 2026] Page 5/5 → 18 records
+ DONE spring 2026 -> 118 records
+
+=== Fetching SUMMER 2026 ===
+[summer 2026] Total pages: 4
+[summer 2026] Page 1/4 → 25 records
+[summer 2026] Page 2/4 → 25 records
+[summer 2026] Page 3/4 → 25 records
+[summer 2026] Page 4/4 → 5 records
+ DONE summer 2026 -> 80 records
+
+=== Fetching FALL 2026 ===
+[fall 2026] Total pages: 2
+[fall 2026] Page 1/2 → 25 records
+[fall 2026] Page 2/2 → 25 records
+ DONE fall 2026 -> 50 records

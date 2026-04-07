@@ -1,9 +1,23 @@
 {{ config(
+    materialized = 'incremental',
     schema = 'gold',
-    order_by = "anime_id",
-    materialized = 'table'
+    unique_key = ['anime_id', 'season', 'year'],
+    on_schema_change = 'append_new_columns'
 ) }}
-SELECT anime_id,
+
+WITH source_data AS (
+    SELECT *
+    FROM {{ ref('cleaned_data') }}
+)
+
+SELECT DISTINCT
+    anime_id,
     season,
     year
-FROM {{ ref('cleaned_data') }}
+FROM source_data
+
+{% if is_incremental() %}
+WHERE (anime_id, season, year) NOT IN (
+    SELECT anime_id, season, year FROM {{ this }}
+)
+{% endif %}

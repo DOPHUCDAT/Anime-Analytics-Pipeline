@@ -9,6 +9,7 @@ dependencies = [
     "boto3>=1.40.69",
     "bs4>=0.0.2",
     "confluent>=0.3.2",
+    "dagster>=1.12.2",
     "dagster-dbt>=0.28.2",
     "dagster-dlt>=0.28.2",
     "dagster-webserver>=1.12.2",
@@ -18,7 +19,7 @@ dependencies = [
     "dlt[duckdb,postgres]>=1.18.2",
     "expectation>=0.0.2",
     "expectations>=1.0.1",
-    "great>=0.2.0",
+    "joblib>=1.5.3",
     "jupyter>=1.1.1",
     "kafka-python>=2.2.15",
     "matplotlib>=3.10.7",
@@ -29,6 +30,7 @@ dependencies = [
     "pyspark==3.5.7",
     "pytest>=9.0.0",
     "requests>=2.32.5",
+    "scikit-learn>=1.7.2",
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.44",
 ]
@@ -38,3 +40,4 @@ data_extract_load = { path = "./data_extract_load" }
 
 [tool.dagster]
 module = "orchestration"
+

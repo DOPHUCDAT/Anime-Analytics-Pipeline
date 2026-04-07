@@ -1,0 +1,5 @@
+[32m2026-04-04 17:02:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 92692 - LOGS_CAPTURED - Started capturing logs in process (pid: 92692).
+[32m2026-04-04 17:02:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 92692 - dlt_load - STEP_START - Started execution of step "dlt_load".
+[32m2026-04-04 17:03:28 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 92692 - dlt_load - STEP_OUTPUT - Yielded output "dlt_anime_source_raw_anime" of type "Nothing". (Type check passed).
+[32m2026-04-04 17:03:28 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 92692 - dlt_load - ASSET_MATERIALIZATION - Materialized value dlt_anime_source_raw_anime.
+[32m2026-04-04 17:03:28 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc1d16f1-c032-41ec-bd73-c5ed58dc4f72 - 92692 - dlt_load - STEP_SUCCESS - Finished execution of step "dlt_load" in 36.58s.

@@ -1,5 +1,13 @@
 
-SELECT anime_id,
+
+WITH source_data AS (
+    SELECT *
+    FROM "anime_seasonal"."silver"."cleaned_data"
+)
+
+SELECT DISTINCT
+    anime_id,
     season,
     year
-FROM "anime_seasonal"."public_silver"."cleaned_data"
+FROM source_data
+

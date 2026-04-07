@@ -1,0 +1,92 @@
+Running with dbt=1.10.13
+Registered adapter: postgres=1.9.1
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.anime_seasonal.bronze
+Found 9 models, 26 data tests, 1 source, 566 macros
+
+Concurrency: 4 threads (target='dev')
+
+1 of 35 START sql incremental model silver.cleaned_data ........................ [RUN]
+1 of 35 OK created sql incremental model silver.cleaned_data ................... [[32mINSERT 0 20650[0m in 0.40s]
+2 of 35 START sql incremental model gold.dim_airing ............................ [RUN]
+3 of 35 START sql incremental model gold.dim_info .............................. [RUN]
+4 of 35 START sql incremental model gold.dim_season ............................ [RUN]
+5 of 35 START sql incremental model gold.dim_studios ........................... [RUN]
+5 of 35 ERROR creating sql incremental model gold.dim_studios .................. [[31mERROR[0m in 0.12s]
+3 of 35 ERROR creating sql incremental model gold.dim_info ..................... [[31mERROR[0m in 0.13s]
+4 of 35 ERROR creating sql incremental model gold.dim_season ................... [[31mERROR[0m in 0.13s]
+6 of 35 START sql incremental model gold.fact_anime ............................ [RUN]
+7 of 35 SKIP test not_null_dim_studios_anime_id ................................ [[33mSKIP[0m]
+8 of 35 SKIP test unique_dim_studios_anime_id .................................. [[33mSKIP[0m]
+9 of 35 SKIP test not_null_dim_info_anime_id ................................... [[33mSKIP[0m]
+10 of 35 SKIP test not_null_dim_info_genres .................................... [[33mSKIP[0m]
+11 of 35 SKIP test not_null_dim_info_rating .................................... [[33mSKIP[0m]
+12 of 35 SKIP test not_null_dim_info_status .................................... [[33mSKIP[0m]
+13 of 35 SKIP test not_null_dim_info_title ..................................... [[33mSKIP[0m]
+14 of 35 SKIP test not_null_dim_info_type ...................................... [[33mSKIP[0m]
+15 of 35 SKIP test unique_dim_info_anime_id .................................... [[33mSKIP[0m]
+16 of 35 SKIP test accepted_values_dim_season_season__winter__spring__summer__fall  [[33mSKIP[0m]
+6 of 35 ERROR creating sql incremental model gold.fact_anime ................... [[31mERROR[0m in 0.08s]
+17 of 35 SKIP test dbt_utils_accepted_range_dim_season_year__2100__1900 ........ [[33mSKIP[0m]
+18 of 35 SKIP test not_null_dim_season_anime_id ................................ [[33mSKIP[0m]
+19 of 35 SKIP test unique_dim_season_anime_id .................................. [[33mSKIP[0m]
+20 of 35 SKIP test dbt_utils_accepted_range_fact_anime_episodes__2000__0 ....... [[33mSKIP[0m]
+21 of 35 SKIP test dbt_utils_accepted_range_fact_anime_favorites__0 ............ [[33mSKIP[0m]
+22 of 35 SKIP test dbt_utils_accepted_range_fact_anime_members__0 .............. [[33mSKIP[0m]
+2 of 35 OK created sql incremental model gold.dim_airing ....................... [[32mINSERT 0 0[0m in 0.25s]
+23 of 35 SKIP test dbt_utils_accepted_range_fact_anime_popularity__0 ........... [[33mSKIP[0m]
+24 of 35 SKIP test dbt_utils_accepted_range_fact_anime_ranking__0 .............. [[33mSKIP[0m]
+25 of 35 SKIP test dbt_utils_accepted_range_fact_anime_score__10__0 ............ [[33mSKIP[0m]
+26 of 35 SKIP test dbt_utils_accepted_range_fact_anime_scored_by__0 ............ [[33mSKIP[0m]
+27 of 35 SKIP test not_null_fact_anime_anime_id ................................ [[33mSKIP[0m]
+28 of 35 SKIP test unique_fact_anime_anime_id .................................. [[33mSKIP[0m]
+29 of 35 START test dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from  [RUN]
+30 of 35 START test not_null_dim_airing_aired_from ............................. [RUN]
+31 of 35 START test not_null_dim_airing_anime_id ............................... [RUN]
+32 of 35 START test unique_dim_airing_anime_id ................................. [RUN]
+30 of 35 PASS not_null_dim_airing_aired_from ................................... [[32mPASS[0m in 0.30s]
+29 of 35 PASS dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from  [[32mPASS[0m in 0.31s]
+31 of 35 PASS not_null_dim_airing_anime_id ..................................... [[32mPASS[0m in 0.30s]
+33 of 35 SKIP relation mart.anime_season_performance ........................... [[33mSKIP[0m]
+34 of 35 SKIP relation mart.studio_performance ................................. [[33mSKIP[0m]
+35 of 35 SKIP relation mart.top_10_anime_of_all_time ........................... [[33mSKIP[0m]
+32 of 35 PASS unique_dim_airing_anime_id ....................................... [[32mPASS[0m in 0.31s]
+
+Finished running 6 incremental models, 26 data tests, 3 view models in 0 hours 0 minutes and 1.25 seconds (1.25s).
+
+[31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+
+[31mFailure in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)[0m
+  Database Error in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)
+  column "aired_from" does not exist
+  LINE 24:     SELECT COALESCE(MAX(aired_from), '1900-01-01') AS max_ai...
+                                   ^
+
+  compiled code at target/dbt_models-a9da0b8-df989ee/compiled/anime_seasonal/anime_seasonal/models/gold/dim_studios.sql
+
+[31mFailure in model dim_info (anime_seasonal/models/gold/dim_info.sql)[0m
+  Database Error in model dim_info (anime_seasonal/models/gold/dim_info.sql)
+  column "aired_from" does not exist
+  LINE 24:     SELECT COALESCE(MAX(aired_from), '1900-01-01') AS max_ai...
+                                   ^
+
+  compiled code at target/dbt_models-a9da0b8-df989ee/compiled/anime_seasonal/anime_seasonal/models/gold/dim_info.sql
+
+[31mFailure in model dim_season (anime_seasonal/models/gold/dim_season.sql)[0m
+  Database Error in model dim_season (anime_seasonal/models/gold/dim_season.sql)
+  column "aired_from" does not exist
+  LINE 21:     SELECT COALESCE(MAX(aired_from), '1900-01-01') AS max_ai...
+                                   ^
+
+  compiled code at target/dbt_models-a9da0b8-df989ee/compiled/anime_seasonal/anime_seasonal/models/gold/dim_season.sql
+
+[31mFailure in model fact_anime (anime_seasonal/models/gold/fact_anime.sql)[0m
+  Database Error in model fact_anime (anime_seasonal/models/gold/fact_anime.sql)
+  column "aired_from" does not exist
+  LINE 21:     SELECT COALESCE(MAX(aired_from), '1900-01-01') AS max_ai...
+                                   ^
+
+  compiled code at target/dbt_models-a9da0b8-df989ee/compiled/anime_seasonal/anime_seasonal/models/gold/fact_anime.sql
+
+Done. PASS=6 WARN=0 ERROR=4 SKIP=25 NO-OP=0 TOTAL=35

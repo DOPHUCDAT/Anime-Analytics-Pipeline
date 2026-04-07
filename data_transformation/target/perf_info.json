@@ -5,8 +5,8 @@
     "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.016747613000916317,
-    "load_all_elapsed": 0.19064360600168584,
+    "read_files_elapsed": 0.04095943399988755,
+    "load_all_elapsed": 0.27958242099975905,
     "projects": [
         {
             "project_name": "anime_seasonal",

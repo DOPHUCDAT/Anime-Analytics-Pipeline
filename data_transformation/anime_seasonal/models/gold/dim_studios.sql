@@ -1,8 +1,16 @@
 {{ config(
+    materialized = 'incremental',
     schema = 'gold',
-    order_by = "anime_id",
-    materialized = 'table'
+    unique_key = 'anime_id',
+    on_schema_change = 'append_new_columns'
 ) }}
-SELECT anime_id,
+
+WITH source_data AS (
+    SELECT *
+    FROM {{ ref('cleaned_data') }}
+)
+SELECT
+    anime_id,
     studios
-FROM {{ ref('cleaned_data') }}
+FROM source_data
+

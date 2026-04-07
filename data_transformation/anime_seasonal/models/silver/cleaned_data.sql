@@ -1,5 +1,6 @@
 {{ config(
-    materialized = 'table',
+    materialized = 'incremental',
+    unique_key = 'anime_id',
     schema = "silver",
     order_by = "anime_id"
 ) }} WITH anime_sk AS (
@@ -12,6 +13,8 @@ SELECT {{ dbt_utils.generate_surrogate_key(['anime_id', 'aired_from']) }} AS ani
     TRIM(title) AS title,
     type,
     source,
+    genres,
+    TRIM(rating) AS rating,
     CASE
         WHEN episodes < 0 THEN ABS(episodes)
         ELSE episodes

@@ -30,12 +30,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   anime_seasonal:
+    +on_schema_change: append_new_columns
     bronze:
       +materialized: table
     silver:
-      +materialized: table
+      +materialized: incremental
     gold:
-      +materialized: table
+      +materialized: incremental
     mart:
       +materialized: view
 

@@ -1,0 +1,15 @@
+Running with dbt=1.10.13
+Registered adapter: postgres=1.9.1
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.anime_seasonal.bronze
+Found 9 models, 24 data tests, 1 source, 566 macros
+
+Concurrency: 4 threads (target='dev')
+
+
+Finished running  in 0 hours 0 minutes and 0.17 seconds (0.17s).
+Encountered an error:
+Database Error
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "zodiac"
+  

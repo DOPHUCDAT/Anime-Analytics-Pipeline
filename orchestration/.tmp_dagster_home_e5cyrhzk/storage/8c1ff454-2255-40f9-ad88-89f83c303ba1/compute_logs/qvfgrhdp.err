@@ -1,0 +1,47 @@
+[32m2026-03-31 11:53:14 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - 57068 - LOGS_CAPTURED - Started capturing logs in process (pid: 57068).
+[32m2026-03-31 11:53:14 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - 57068 - dbt_models - STEP_START - Started execution of step "dbt_models".
+[32m2026-03-31 11:53:14 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - dbt_models - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2026-03-31 11:53:19 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - dbt_models - Copying `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/partial_parse.msgpack` to `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-8c1ff45-1c2d27b/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2026-03-31 11:53:19 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - dbt_models - Running dbt command: `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/bin/dbt build --select fqn:*`.
+[32m2026-03-31 11:53:24 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - dbt_models - Finished dbt command: `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/bin/dbt build --select fqn:*`.
+[32m2026-03-31 11:53:24 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 8c1ff454-2255-40f9-ad88-89f83c303ba1 - 57068 - dbt_models - STEP_FAILURE - Execution of step "dbt_models" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/bin/dbt build --select fqn:*`
+
+failed with exit code `2`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-8c1ff45-1c2d27b/dbt.log.
+
+Errors parsed from dbt logs:
+
+Encountered an error:
+Database Error
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+  
+
+Stack Trace:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_plan.py", line 247, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 504, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 188, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 157, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/orchestration/definitions.py", line 156, in dbt_models
+    yield from dbt.cli(["build"], context=context).stream()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 215, in __next__
+    return next(self._inner_iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 288, in _stream_asset_events
+    for event in self.stream_raw_events():
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 381, in stream_raw_events
+    self._raise_on_error()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 474, in _raise_on_error
+    raise error
+[0m

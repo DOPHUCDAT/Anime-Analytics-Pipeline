@@ -1,5 +1,5 @@
 
-  create view "anime_seasonal"."public_mart"."anime_season_performance__dbt_tmp"
+  create view "anime_seasonal"."mart"."anime_season_performance__dbt_tmp"
     
     
   as (
@@ -10,8 +10,8 @@ SELECT s.year,
     round(avg(f.score), 2) AS avg_score,
     sum(f.members) AS total_members,
     sum(f.favorites) AS total_favorites
-FROM "anime_seasonal"."public_gold"."fact_anime" f
-    JOIN "anime_seasonal"."public_gold"."dim_season" s ON f.anime_id = s.anime_id
+FROM "anime_seasonal"."gold"."fact_anime" f
+    JOIN "anime_seasonal"."gold"."dim_season" s ON f.anime_id = s.anime_id
 GROUP BY s.year,
     s.season
   );

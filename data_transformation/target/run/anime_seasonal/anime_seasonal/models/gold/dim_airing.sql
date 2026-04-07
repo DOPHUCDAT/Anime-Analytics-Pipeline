@@ -1,17 +1,25 @@
 
+      
   
     
 
-  create  table "anime_seasonal"."public_gold"."dim_airing__dbt_tmp"
+  create  table "anime_seasonal"."gold"."dim_airing__dbt_tmp"
   
   
     as
   
   (
     
-SELECT anime_id,
+
+WITH source_data AS (
+    SELECT *
+    FROM "anime_seasonal"."silver"."cleaned_data"
+)
+SELECT
+    anime_id,
     aired_from,
     aired_to
-FROM "anime_seasonal"."public_silver"."cleaned_data"
+FROM source_data
   );
+  
   

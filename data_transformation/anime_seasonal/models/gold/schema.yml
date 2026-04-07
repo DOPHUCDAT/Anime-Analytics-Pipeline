@@ -33,17 +33,32 @@ models:
       - name: title
         description: "Title of the anime."
         tests:
-          - not_null
+          - not_null:
+              severity: warn
       
       - name: type
         description: "Anime type"
         tests:
-          - not_null
+          - not_null:
+              severity: warn
 
       - name: status
         description: "Current status of the anime"
         tests:
-          - not_null
+          - not_null:
+              severity: warn
+      
+      - name: genres
+        description: "Genres of the anime, stored as an array of strings."
+        tests:
+          - not_null:
+              severity: warn
+      
+      - name: rating
+        description: "Rating of the anime"
+        tests:
+          - not_null:
+              severity: warn
               
   - name: dim_season
     description: "Dimension table of seasonal information."

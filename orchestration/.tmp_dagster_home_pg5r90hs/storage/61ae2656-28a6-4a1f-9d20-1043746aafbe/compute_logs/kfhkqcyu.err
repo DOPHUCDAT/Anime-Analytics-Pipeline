@@ -1,0 +1,89 @@
+[32m2026-04-04 11:23:24 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - 31648 - LOGS_CAPTURED - Started capturing logs in process (pid: 31648).
+[32m2026-04-04 11:23:24 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - 31648 - dbt_models - STEP_START - Started execution of step "dbt_models".
+[32m2026-04-04 11:23:24 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - dbt_models - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2026-04-04 11:23:28 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - dbt_models - Copying `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/partial_parse.msgpack` to `/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-61ae265-4ddf1d1/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2026-04-04 11:23:28 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - dbt_models - Running dbt command: `dbt build --select fqn:*`.
+[32m2026-04-04 11:23:32 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - 31648 - dbt_models - STEP_OUTPUT - Yielded output "silver__cleaned_data" of type "Nothing". (Type check passed).
+[32m2026-04-04 11:23:32 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - 31648 - dbt_models - ASSET_MATERIALIZATION - Materialized value silver cleaned_data.
+[32m2026-04-04 11:23:33 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - dbt_models - Finished dbt command: `dbt build --select fqn:*`.
+[32m2026-04-04 11:23:33 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 61ae2656-28a6-4a1f-9d20-1043746aafbe - 31648 - dbt_models - STEP_FAILURE - Execution of step "dbt_models" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`dbt build --select fqn:*`
+
+failed with exit code `1`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/data_transformation/target/dbt_models-61ae265-4ddf1d1/dbt.log.
+
+Errors parsed from dbt logs:
+
+2 of 35 ERROR creating sql incremental model gold.dim_airing ................... [[31mERROR[0m in 0.11s]
+
+4 of 35 ERROR creating sql incremental model gold.dim_season ................... [[31mERROR[0m in 0.10s]
+
+3 of 35 ERROR creating sql incremental model gold.dim_info ..................... [[31mERROR[0m in 0.10s]
+
+5 of 35 ERROR creating sql incremental model gold.dim_studios .................. [[31mERROR[0m in 0.10s]
+
+6 of 35 ERROR creating sql incremental model gold.fact_anime ................... [[31mERROR[0m in 0.06s]
+
+[31mFailure in model dim_airing (anime_seasonal/models/gold/dim_airing.sql)[0m
+
+  Database Error in model dim_airing (anime_seasonal/models/gold/dim_airing.sql)
+  syntax error at or near "SELECT"
+  LINE 20: SELECT
+           ^
+
+[31mFailure in model dim_season (anime_seasonal/models/gold/dim_season.sql)[0m
+
+  Database Error in model dim_season (anime_seasonal/models/gold/dim_season.sql)
+  syntax error at or near "SELECT"
+  LINE 21: SELECT
+           ^
+
+[31mFailure in model dim_info (anime_seasonal/models/gold/dim_info.sql)[0m
+
+  Database Error in model dim_info (anime_seasonal/models/gold/dim_info.sql)
+  syntax error at or near "SELECT"
+  LINE 23: SELECT
+           ^
+
+[31mFailure in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)[0m
+
+  Database Error in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)
+  syntax error at or near "SELECT"
+  LINE 23: SELECT
+           ^
+
+[31mFailure in model fact_anime (anime_seasonal/models/gold/fact_anime.sql)[0m
+
+  Database Error in model fact_anime (anime_seasonal/models/gold/fact_anime.sql)
+  syntax error at or near "SELECT"
+  LINE 21: SELECT
+           ^
+
+Stack Trace:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_plan.py", line 247, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 504, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 188, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 157, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/orchestration/definitions.py", line 72, in dbt_models
+    yield from dbt.cli(["build"], context=context).stream()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 215, in __next__
+    return next(self._inner_iterator)
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 288, in _stream_asset_events
+    for event in self.stream_raw_events():
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 381, in stream_raw_events
+    self._raise_on_error()
+  File "/home/datdp/DE_Prj/Dagster-dlt-dbt-pipeline/.venv/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 474, in _raise_on_error
+    raise error
+[0m

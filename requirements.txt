@@ -1,5 +1,5 @@
 dlt
-dlt-postgres
+dlt[postgres]
 dagster
 dagster-dbt
 dagster-dlt
@@ -7,3 +7,8 @@ dbt-core
 dbt-postgres
 dagster-webserver
 requests
+sqlalchemy
+pandas
+scikit-learn
+numpy
+joblib

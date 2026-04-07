@@ -1,0 +1,123 @@
+Running with dbt=1.10.13
+Registered adapter: postgres=1.9.1
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.anime_seasonal.bronze
+Found 9 models, 26 data tests, 1 source, 566 macros
+
+Concurrency: 4 threads (target='dev')
+
+1 of 35 START sql incremental model silver.cleaned_data ........................ [RUN]
+1 of 35 OK created sql incremental model silver.cleaned_data ................... [[32mINSERT 0 20650[0m in 0.42s]
+2 of 35 START sql incremental model gold.dim_airing ............................ [RUN]
+3 of 35 START sql incremental model gold.dim_info .............................. [RUN]
+4 of 35 START sql incremental model gold.dim_season ............................ [RUN]
+5 of 35 START sql incremental model gold.dim_studios ........................... [RUN]
+5 of 35 ERROR creating sql incremental model gold.dim_studios .................. [[31mERROR[0m in 0.10s]
+6 of 35 START sql incremental model gold.fact_anime ............................ [RUN]
+4 of 35 OK created sql incremental model gold.dim_season ....................... [[32mINSERT 0 144551[0m in 0.71s]
+2 of 35 OK created sql incremental model gold.dim_airing ....................... [[32mINSERT 0 144551[0m in 0.71s]
+7 of 35 SKIP test not_null_dim_studios_anime_id ................................ [[33mSKIP[0m]
+8 of 35 SKIP test unique_dim_studios_anime_id .................................. [[33mSKIP[0m]
+9 of 35 START test accepted_values_dim_season_season__winter__spring__summer__fall  [RUN]
+10 of 35 START test dbt_utils_accepted_range_dim_season_year__2100__1900 ....... [RUN]
+9 of 35 PASS accepted_values_dim_season_season__winter__spring__summer__fall ... [[32mPASS[0m in 0.16s]
+10 of 35 PASS dbt_utils_accepted_range_dim_season_year__2100__1900 ............. [[32mPASS[0m in 0.16s]
+11 of 35 START test not_null_dim_season_anime_id ............................... [RUN]
+12 of 35 START test unique_dim_season_anime_id ................................. [RUN]
+11 of 35 PASS not_null_dim_season_anime_id ..................................... [[32mPASS[0m in 0.13s]
+13 of 35 START test dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from  [RUN]
+12 of 35 FAIL 20654 unique_dim_season_anime_id ................................. [[31mFAIL 20654[0m in 0.20s]
+14 of 35 START test not_null_dim_airing_aired_from ............................. [RUN]
+13 of 35 PASS dbt_utils_expression_is_true_dim_airing_aired_to__is_null_or_aired_to_aired_from  [[32mPASS[0m in 0.12s]
+15 of 35 START test not_null_dim_airing_anime_id ............................... [RUN]
+14 of 35 PASS not_null_dim_airing_aired_from ................................... [[32mPASS[0m in 0.09s]
+6 of 35 OK created sql incremental model gold.fact_anime ....................... [[32mINSERT 0 144551[0m in 1.12s]
+16 of 35 START test unique_dim_airing_anime_id ................................. [RUN]
+17 of 35 START test dbt_utils_accepted_range_fact_anime_episodes__2000__0 ...... [RUN]
+15 of 35 PASS not_null_dim_airing_anime_id ..................................... [[32mPASS[0m in 0.09s]
+18 of 35 START test dbt_utils_accepted_range_fact_anime_favorites__0 ........... [RUN]
+3 of 35 OK created sql incremental model gold.dim_info ......................... [[32mINSERT 0 144551[0m in 1.30s]
+19 of 35 START test dbt_utils_accepted_range_fact_anime_members__0 ............. [RUN]
+17 of 35 PASS dbt_utils_accepted_range_fact_anime_episodes__2000__0 ............ [[32mPASS[0m in 0.12s]
+18 of 35 PASS dbt_utils_accepted_range_fact_anime_favorites__0 ................. [[32mPASS[0m in 0.10s]
+20 of 35 START test dbt_utils_accepted_range_fact_anime_popularity__0 .......... [RUN]
+21 of 35 START test dbt_utils_accepted_range_fact_anime_ranking__0 ............. [RUN]
+16 of 35 FAIL 20650 unique_dim_airing_anime_id ................................. [[31mFAIL 20650[0m in 0.16s]
+19 of 35 PASS dbt_utils_accepted_range_fact_anime_members__0 ................... [[32mPASS[0m in 0.08s]
+22 of 35 START test dbt_utils_accepted_range_fact_anime_score__10__0 ........... [RUN]
+23 of 35 START test dbt_utils_accepted_range_fact_anime_scored_by__0 ........... [RUN]
+20 of 35 PASS dbt_utils_accepted_range_fact_anime_popularity__0 ................ [[32mPASS[0m in 0.11s]
+21 of 35 PASS dbt_utils_accepted_range_fact_anime_ranking__0 ................... [[32mPASS[0m in 0.12s]
+24 of 35 START test not_null_fact_anime_anime_id ............................... [RUN]
+23 of 35 PASS dbt_utils_accepted_range_fact_anime_scored_by__0 ................. [[32mPASS[0m in 0.10s]
+22 of 35 PASS dbt_utils_accepted_range_fact_anime_score__10__0 ................. [[32mPASS[0m in 0.11s]
+25 of 35 START test unique_fact_anime_anime_id ................................. [RUN]
+26 of 35 START test not_null_dim_info_anime_id ................................. [RUN]
+27 of 35 START test not_null_dim_info_genres ................................... [RUN]
+24 of 35 PASS not_null_fact_anime_anime_id ..................................... [[32mPASS[0m in 0.11s]
+28 of 35 START test not_null_dim_info_rating ................................... [RUN]
+27 of 35 WARN 82496 not_null_dim_info_genres ................................... [[33mWARN 82496[0m in 0.10s]
+26 of 35 PASS not_null_dim_info_anime_id ....................................... [[32mPASS[0m in 0.12s]
+29 of 35 START test not_null_dim_info_status ................................... [RUN]
+30 of 35 START test not_null_dim_info_title .................................... [RUN]
+25 of 35 FAIL 20650 unique_fact_anime_anime_id ................................. [[31mFAIL 20650[0m in 0.15s]
+31 of 35 START test not_null_dim_info_type ..................................... [RUN]
+28 of 35 WARN 22229 not_null_dim_info_rating ................................... [[33mWARN 22229[0m in 0.10s]
+32 of 35 START test unique_dim_info_anime_id ................................... [RUN]
+29 of 35 PASS not_null_dim_info_status ......................................... [[32mPASS[0m in 0.10s]
+33 of 35 SKIP relation mart.anime_season_performance ........................... [[33mSKIP[0m]
+30 of 35 PASS not_null_dim_info_title .......................................... [[32mPASS[0m in 0.11s]
+34 of 35 SKIP relation mart.studio_performance ................................. [[33mSKIP[0m]
+31 of 35 WARN 7 not_null_dim_info_type ......................................... [[33mWARN 7[0m in 0.09s]
+32 of 35 FAIL 20650 unique_dim_info_anime_id ................................... [[31mFAIL 20650[0m in 0.12s]
+35 of 35 SKIP relation mart.top_10_anime_of_all_time ........................... [[33mSKIP[0m]
+
+Finished running 6 incremental models, 26 data tests, 3 view models in 0 hours 0 minutes and 2.51 seconds (2.51s).
+
+[31mCompleted with 5 errors, 0 partial successes, and 3 warnings:[0m
+
+[31mFailure in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)[0m
+  Database Error in model dim_studios (anime_seasonal/models/gold/dim_studios.sql)
+  relation "spurce_data" does not exist
+  LINE 29: FROM spurce_data
+                ^
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/dim_studios.sql
+
+[31mFailure in test unique_dim_season_anime_id (anime_seasonal/models/gold/schema.yml)[0m
+  Got 20654 results, configured to fail if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/unique_dim_season_anime_id.sql
+
+[31mFailure in test unique_dim_airing_anime_id (anime_seasonal/models/gold/schema.yml)[0m
+  Got 20650 results, configured to fail if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/unique_dim_airing_anime_id.sql
+
+[31mFailure in test unique_fact_anime_anime_id (anime_seasonal/models/gold/schema.yml)[0m
+  Got 20650 results, configured to fail if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/unique_fact_anime_anime_id.sql
+
+[31mFailure in test unique_dim_info_anime_id (anime_seasonal/models/gold/schema.yml)[0m
+  Got 20650 results, configured to fail if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/unique_dim_info_anime_id.sql
+
+[33mWarning in test not_null_dim_info_genres (anime_seasonal/models/gold/schema.yml)[0m
+Got 82496 results, configured to warn if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/not_null_dim_info_genres.sql
+
+[33mWarning in test not_null_dim_info_rating (anime_seasonal/models/gold/schema.yml)[0m
+Got 22229 results, configured to warn if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/not_null_dim_info_rating.sql
+
+[33mWarning in test not_null_dim_info_type (anime_seasonal/models/gold/schema.yml)[0m
+Got 7 results, configured to warn if != 0
+
+  compiled code at target/dbt_models-92e0554-19956bb/compiled/anime_seasonal/anime_seasonal/models/gold/schema.yml/not_null_dim_info_type.sql
+
+Done. PASS=22 WARN=3 ERROR=5 SKIP=5 NO-OP=0 TOTAL=35

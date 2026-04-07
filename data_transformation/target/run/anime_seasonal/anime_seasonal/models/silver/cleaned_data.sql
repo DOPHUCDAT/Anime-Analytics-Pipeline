@@ -1,8 +1,9 @@
 
+      
   
     
 
-  create  table "anime_seasonal"."public_silver"."cleaned_data__dbt_tmp"
+  create  table "anime_seasonal"."silver"."cleaned_data__dbt_tmp"
   
   
     as
@@ -11,13 +12,15 @@
      WITH anime_sk AS (
     SELECT *,
         ROW_NUMBER() OVER (PARTITION BY anime_id, aired_from) AS rn
-    FROM "anime_seasonal"."public_bronze"."raw_anime"
+    FROM "anime_seasonal"."bronze"."raw_anime"
     WHERE anime_id IS NOT NULL
 )
 SELECT md5(cast(coalesce(cast(anime_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(aired_from as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS anime_id,
     TRIM(title) AS title,
     type,
     source,
+    genres,
+    TRIM(rating) AS rating,
     CASE
         WHEN episodes < 0 THEN ABS(episodes)
         ELSE episodes
@@ -65,4 +68,5 @@ SELECT md5(cast(coalesce(cast(anime_id as TEXT), '_dbt_utils_surrogate_key_null_
 FROM anime_sk
 WHERE rn = 1
   );
+  
   

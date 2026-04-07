@@ -1,9 +1,15 @@
 {{ config(
-    schema = 'gold',
-    order_by = "anime_id",
-    materialized = 'table'
+    schema='gold',
+    materialized='incremental',
+    unique_key='anime_id'
 ) }}
-SELECT anime_id,
+
+WITH source_data AS (
+    SELECT *
+    FROM {{ ref('cleaned_data') }}
+)
+SELECT
+    anime_id,
     score,
     scored_by,
     popularity,
@@ -11,4 +17,4 @@ SELECT anime_id,
     favorites,
     ranking,
     episodes
-FROM {{ ref('cleaned_data') }}
+FROM source_data
